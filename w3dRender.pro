@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui-private
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,16 +25,36 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 include($$PWD/src/XMath/XMath.pri)
+INCLUDEPATH += ./src/XMath
+INCLUDEPATH += ./src
+
+LIBS += user32.lib
+LIBS += gdi32.lib
 
 SOURCES += \
-        /src/main.cpp \
-        /src/mainwindow.cpp
+        src/main.cpp \
+        src/mainwindow.cpp \
+        src/BoxDemo.cpp \
+        src/BoxShader.cpp \
+        src/GeometryGenerator.cpp \
+        src/ShaderBase.cpp \
+        src/Tiny3DDevice.cpp \
+        src/Tiny3DDeviceContext.cpp \
+        src/main1.cpp
 
 HEADERS += \
-        /src/mainwindow.h
+        src/mainwindow.h \
+        src/BoxDemo.h \
+        src/BoxShader.h \
+        src/GeometryGenerator.h \
+        src/LightHelper.h \
+        src/ShaderBase.h \
+        src/Tiny3D.h \
+        src/Tiny3DDevice.h \
+        src/Tiny3DDeviceContext.h
 
 FORMS += \
-        /src/mainwindow.ui
+    src/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

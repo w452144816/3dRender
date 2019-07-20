@@ -10,7 +10,7 @@ public:
     XTexture2D(UINT width,UINT height);
     ~XTexture2D();
 
-    XTexture2D(const XTexture2D& rhs) :m_width(rhs.m_width), m_height(rhs.m_height)
+    inline XTexture2D(const XTexture2D& rhs) :m_width(rhs.m_width), m_height(rhs.m_height)
 	{
 		//Éî¿½±´
         m_pixelBuffer = new XVector*[m_width];

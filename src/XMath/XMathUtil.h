@@ -2,13 +2,17 @@
 #include "XVector.h"
 #include "XMatrix.h"
 #include "XVertex.h"
-#include <windows.h>
+#include <Windows.h>
 #include <cmath>
 #include <vector>
 
 namespace MathUtil
 {
 	extern const float PI;
+
+    //
+    inline float POW_F(float x){ return x * x ;}
+
 	//线性插值 t位于[0,1]
 	float Lerp(float x1, float x2, float t);
 

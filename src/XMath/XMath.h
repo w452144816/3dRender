@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "XMathUtil.h"
 #include "XVertex.h"
 #include "XMatrix.h"

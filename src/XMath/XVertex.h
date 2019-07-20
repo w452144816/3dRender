@@ -16,10 +16,10 @@ public:
     XVector normal;
 
 	VertexIn() = default;
-    VertexIn(XVector pos, XVector color, XFLOAT2 tex, XVector normal)
+    inline VertexIn(XVector pos, XVector color, XFLOAT2 tex, XVector normal)
 		:pos(pos), color(color), tex(tex), normal(normal) {}
 
-	VertexIn(const VertexIn& rhs):pos(rhs.pos),color(rhs.color),tex(rhs.tex),normal(rhs.normal){}
+    inline VertexIn(const VertexIn& rhs):pos(rhs.pos),color(rhs.color),tex(rhs.tex),normal(rhs.normal){}
 };
 
 //经过顶点着色器输出的结构
@@ -40,10 +40,10 @@ public:
 	float oneDivZ;
 
 	VertexOut() = default;
-    VertexOut(XVector posT, XVector posH, XFLOAT2 tex, XVector normal, XVector color, float oneDivZ)
+    inline VertexOut(XVector posT, XVector posH, XFLOAT2 tex, XVector normal, XVector color, float oneDivZ)
 		:posTrans(posT), posH(posH), tex(tex), normal(normal), color(color), oneDivZ(oneDivZ) {}
 
-	VertexOut(const VertexOut& rhs) :posTrans(rhs.posTrans), posH(rhs.posH), tex(rhs.tex), normal(rhs.normal),
+    inline VertexOut(const VertexOut& rhs) :posTrans(rhs.posTrans), posH(rhs.posH), tex(rhs.tex), normal(rhs.normal),
 	color(rhs.color),oneDivZ(rhs.oneDivZ){}
 
 	VertexOut& operator= (const VertexOut& rhs)

@@ -18,7 +18,7 @@ public:
 	
 public:
     XMatrix() = default;
-    XMatrix(float a1,float a2,float a3,float a4,
+    inline XMatrix(float a1,float a2,float a3,float a4,
 			 float b1,float b2,float b3,float b4,
 			 float c1,float c2,float c3,float c4,
 		     float d1,float d2,float d3,float d4)
@@ -29,14 +29,14 @@ public:
 		_41 = d1; _42 = d2; _43 = d3; _44 = d4;
 	}
 	
-    XMatrix(const XMatrix& rhs)
+    inline XMatrix(const XMatrix& rhs)
 	{
 		for (int i = 0; i < 4; ++i)
 			for (int j = 0; j < 4; ++j)
 				m[i][j] = rhs.m[i][j];
 	}
 
-    XMatrix& operator= (const XMatrix& rhs)
+    inline XMatrix& operator= (const XMatrix& rhs)
 	{
 		for (int i = 0; i < 4; ++i)
 			for (int j = 0; j < 4; ++j)
@@ -45,7 +45,7 @@ public:
 	}
 
 public:
-	//单位化
+    //单位化 单位矩阵
 	void Identity();
 	//0矩阵
 	void SetZero();

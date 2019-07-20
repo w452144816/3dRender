@@ -227,7 +227,7 @@ XMatrix MathUtil::XMatrixRotationZ(float angle)
 	);
 }
 
-//获取视角矩阵
+//获取视角矩阵   eyePos观察者坐标位置  lookAt焦点位置   up 视角 观察者的头顶朝向
 XMatrix MathUtil::XMatrixLookAtLH(XVector eyePos, XVector lookAt, XVector up)
 {
     XVector zaxis = lookAt - eyePos;

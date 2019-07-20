@@ -48,7 +48,7 @@ bool XVector::operator==(const XVector& rhs) const
 }
 
 //v1 = v2 * m
-XVector XVector::operator* (const ZCMatrix& rhs) const
+XVector XVector::operator* (const XMatrix& rhs) const
 {
     return XVector(x*rhs._11 + y*rhs._21 + z*rhs._31 + w*rhs._41,
 					x*rhs._12 + y*rhs._22 + z*rhs._32 + w*rhs._42,

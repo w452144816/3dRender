@@ -1,7 +1,7 @@
-#include "ZCMatrix.h"
+#include "XMatrix.h"
 
 
-void ZCMatrix::Identity()
+void XMatrix::Identity()
 {
 	_11 = 1.f; _12 = 0.f; _13 = 0.f; _14 = 0.f;
 	_21 = 0.f; _22 = 1.f; _23 = 0.f; _24 = 0.f;
@@ -9,7 +9,7 @@ void ZCMatrix::Identity()
 	_41 = 0.f; _42 = 0.f; _43 = 0.f; _44 = 1.f;
 }
 
-void ZCMatrix::SetZero()
+void XMatrix::SetZero()
 {
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
@@ -17,7 +17,7 @@ void ZCMatrix::SetZero()
 }
 
 // m1 == m2
-bool ZCMatrix::operator==(const ZCMatrix& rhs) const
+bool XMatrix::operator==(const XMatrix& rhs) const
 {
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
@@ -27,9 +27,9 @@ bool ZCMatrix::operator==(const ZCMatrix& rhs) const
 }
 
 //m1 = m2 + m3
-ZCMatrix ZCMatrix::operator+(const ZCMatrix& rhs) const
+XMatrix XMatrix::operator+(const XMatrix& rhs) const
 {
-	ZCMatrix mat;
+    XMatrix mat;
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
 			mat.m[i][j]  = m[i][j] + rhs.m[i][j];
@@ -37,9 +37,9 @@ ZCMatrix ZCMatrix::operator+(const ZCMatrix& rhs) const
 }
 
 //m1 = m2 - m3;
-ZCMatrix ZCMatrix::operator-(const ZCMatrix& rhs) const
+XMatrix XMatrix::operator-(const XMatrix& rhs) const
 {
-	ZCMatrix mat;
+    XMatrix mat;
 	for (int i = 0; i < 4; ++i)
 		for (int j = 0; j < 4; ++j)
 			mat.m[i][j] = m[i][j] - rhs.m[i][j];
@@ -47,9 +47,9 @@ ZCMatrix ZCMatrix::operator-(const ZCMatrix& rhs) const
 }
 
 //m1 = m2 * m3
-ZCMatrix ZCMatrix::operator*(const ZCMatrix& rhs) const
+XMatrix XMatrix::operator*(const XMatrix& rhs) const
 {
-	ZCMatrix mat;
+    XMatrix mat;
 	for (int i = 0; i < 4; ++i)
 		for(int j = 0; j < 4; ++j)
 		{

@@ -6,7 +6,7 @@ XTexture2D::XTexture2D(UINT width, UINT height)
 	m_width = width;
 	m_height = height;
     m_pixelBuffer = new XVector*[width];
-	for (int i = 0; i < width; ++i)
+    for (UINT i = 0; i < width; ++i)
 	{
         m_pixelBuffer[i] = new XVector[height];
 	}
@@ -16,7 +16,7 @@ XTexture2D::~XTexture2D()
 {
 	if (m_pixelBuffer)
 	{
-		for (int i = 0; i < m_width; ++i)
+        for (UINT i = 0; i < m_width; ++i)
 		{
 			delete[] m_pixelBuffer[i];
 		}
